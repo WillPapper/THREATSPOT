@@ -84,6 +84,7 @@
           }
           var mapElement = document.getElementById('map-canvas');
           var map = new google.maps.Map(mapElement, mapOptions);
+          // Array of info boxes
           var locations = [
             ['ISIL Stronghold', 'Firmly entrenched. Avoid at all costs.', 'undefined', 'undefined', 'undefined', 35.9500, 39.0167, 'https://mapbuildr.com/assets/img/markers/ellipse-red.png'],
             ['Friendly Area (Kurdish)', 'Area held by Peshmerga forces. Mostly safe for US forces, though some fighting is present.', 'undefined', 'undefined', 'undefined', 35.4667, 44.3167,
@@ -91,6 +92,28 @@
             ],
             ['FOB Grizzly', 'US FOB. Very safe.', 'undefined', 'undefined', 'undefined', 34.060108, 44.573593, 'https://mapbuildr.com/assets/img/markers/ellipse-green.png']
           ];
+          // Array of hostile areas
+          var threatmap = {};
+          threatmap['raqqa'] = {
+            center: new google.maps.LatLng(35.9500, 39.0167),
+            level: 100,
+            threat: 1
+          };
+          for (var threat in threatmap) {
+          var threatOptions = {
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35,
+            map: map,
+            center: threatmap[threat].center,
+            radius: Math.sqrt(threatmap[threat].level) * 100
+          };
+          // Add the circle for this threat to the map.
+          threatCircle = new google.maps.Circle(populationOptions);
+        }
+      }
           for (i = 0; i < locations.length; i++) {
             if (locations[i][1] == 'undefined') {
               description = '';
@@ -159,7 +182,6 @@
               infoWindowVisible(false);
             });
           }
-        }
       </script>
       <style>
         #map-canvas {
