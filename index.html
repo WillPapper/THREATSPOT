@@ -85,11 +85,12 @@
           var mapElement = document.getElementById('map-canvas');
           var map = new google.maps.Map(mapElement, mapOptions);
           var locations = [
-            ['ISIL Stronghold', 'Firmly entrenched. Avoid at all costs.', 'undefined', 'undefined', 'undefined', 35.9500, 39.0167, 'https://mapbuildr.com/assets/img/markers/ellipse-red.png'],
+            ['ISIL Stronghold', 'Firmly entrenched. Avoid at all costs.', 'undefined', 'undefined', 'undefined', 35.9500, 39.0167, 'assets/ellipse-red.png'],
+            ['ISIL threat', 'ISIL has been known to operate in these areas', 'undefined', 'undefined', 'undefined', 35.950, 39.016, 'assets/opaque-circle.png'],
             ['Friendly Area (Kurdish)', 'Area held by Peshmerga forces. Mostly safe for US forces, though some fighting is present.', 'undefined', 'undefined', 'undefined', 35.4667, 44.3167,
-              'https://mapbuildr.com/assets/img/markers/ellipse-yellow.png'
+              'assets/ellipse-yellow.png'
             ],
-            ['FOB Grizzly', 'US FOB. Very safe.', 'undefined', 'undefined', 'undefined', 34.060108, 44.573593, 'https://mapbuildr.com/assets/img/markers/ellipse-green.png']
+            ['FOB Grizzly', 'US FOB. Very safe.', 'undefined', 'undefined', 'undefined', 34.060108, 44.573593, 'assets/ellipse-green.png']
           ];
           for (i = 0; i < locations.length; i++) {
             if (locations[i][1] == 'undefined') {
