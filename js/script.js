@@ -1,7 +1,7 @@
 function onRouteGoClick() {
   $("#route").show();
-  setTimeout(function(){advanceMiles("fa-arrow-circle-up rotate-45-left", "2 miles", "fa-arrow-circle-right", "9.5 miles", "ISIL Stronghold")}, 5000);
-  setTimeout(function(){advanceMiles("fa-arrow-circle-up rotate-45-left", "1 mile", "fa-arrow-circle-right", "9 miles", "ISIL Stronghold")}, 10000);
+  setTimeout(function(){advanceMiles("fa-arrow-circle-up rotate-45-left", "2 miles", "fa-arrow-circle-right", "10.5 miles", "ISIL Stronghold")}, 5000);
+  setTimeout(function(){advanceMiles("fa-arrow-circle-up rotate-45-left", "1 mile", "fa-arrow-circle-right", "11 miles", "ISIL Stronghold")}, 10000);
 }
 
 function advanceMiles(milesDirection, milesAway, threatDirection, threatMilesAway, threatType) {
