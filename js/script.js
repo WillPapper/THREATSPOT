@@ -1,0 +1,3 @@
+function onRouteGoClick() {
+  $("#route").show();
+}
